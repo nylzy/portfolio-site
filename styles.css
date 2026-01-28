@@ -1,0 +1,55 @@
+.site-header {
+    display: flex;
+    justify-content: space-between; /* pushes left + right */
+    align-items: center;            /* vertical centering */
+    padding: 20px 40px;
+    background-color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.logo {
+    color: #111111;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #111111;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* keep them together on the left */
+    gap: 125px;                   /* fixed spacing between image and text */
+    min-height: 50vh;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.intro-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.intro-text {
+    text-align: center;
+}
+
+.intro-text p,
+.intro-text h1 {
+    margin: 0;          /* remove default browser spacing */
+    line-height: 1.5;   /* controls spacing between lines inside each element */
+}
+
+
+
