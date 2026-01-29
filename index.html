@@ -5,30 +5,52 @@
     <title>Tom Nylund</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
 </head>
 <body>
 <header class="site-header">
-    <h1 class="logo">Tom Nylund</h1>
-
+    <h1 class="logo">Tom <span>Nylund</span></h1>
     <nav class="nav">
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
+
 <main>
     <section class="intro">
-    <img class="intro-photo" src="me.JPG" alt="Photo of Tom Nylund">
-    <div class="intro-text">
-        <p class="intro-kicker">Hi, my name is</p>
-        <h1 class="intro-name">Tom Nylund</h2>
-        <p class="intro-description">
-            Full Stack Developer / Data Scientist
-        </p>
-    </div>
-</section>
-
+        <img class="intro-photo" src="me.JPG" alt="Photo of Tom Nylund">
+        <div class="intro-text">
+            <h1 class="intro-name">Tom Nylund</h1>
+            <p class="intro-description">
+                Full Stack Developer / Data Scientist
+            </p>
+            <div class="socials">
+                <a href="https://github.com/nylzy" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tom-nylund-250804251/" target="_blank" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
+
+<footer class="footer">
+    <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</footer>
 </body>
 </html>
