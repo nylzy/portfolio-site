@@ -17,6 +17,7 @@ main {
     flex: 1;
 }
 
+/* Header */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -50,11 +51,11 @@ main {
 }
 
 .nav a.active {
-    color: #2979FF;
+    color: #2a9d8f;
     font-weight: 700;
-    
 }
 
+/* Intro Section */
 .intro {
     display: flex;
     align-items: center;
@@ -81,12 +82,14 @@ main {
     line-height: 1.5;
 }
 
+/* Contact Section */
 .contact {
     text-align: center;
     padding-top: 5rem;
     flex: 1;
 }
 
+/* Footer */
 .footer {
     text-align: center;
     padding: 20px 0;
@@ -111,5 +114,104 @@ main {
     transform: translateY(-2px);
 }
 
+/* --- Blog Page Styles --- */
+main.blog {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
+main.blog h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
 
+/* Grid container for blog posts */
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Responsive grid */
+@media (max-width: 900px) {
+    .blog-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.post-preview {
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.post-preview:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.post-preview .post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.post-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.post-preview h2 {
+    margin: 0 0 8px 0;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.post-preview h2 a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.post-preview h2 a:hover {
+    color: #2979FF;
+}
+
+.post-preview .post-date {
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 12px;
+}
+
+.post-preview p {
+    margin: 0 0 15px 0;
+    line-height: 1.6;
+    color: #444444;
+    flex-grow: 1;
+}
+
+.post-preview a.read-more {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: 600;
+    align-self: flex-start;
+}
+
+.post-preview a.read-more:hover {
+    text-decoration: underline;
+}
