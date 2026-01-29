@@ -5,8 +5,10 @@
     <title>Tom Nylund - Contact</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
 <header class="site-header">
     <h1 class="logo">Tom <span>Nylund</span></h1>
     <nav class="nav">
@@ -18,8 +20,103 @@
     </nav>
 </header>
 
-<main class="contact">
-    <h1>Get In Touch</h1>
+<main class="contact-page">
+    <div class="contact-container">
+        <div class="contact-intro">
+            <h1>Let's Connect</h1>
+            <p>I'm currently open to new opportunities and would welcome the chance to discuss how my skills and experience could benefit your organization.</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2>Professional Inquiries</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Organization">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="professional@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+61">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Please provide details about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info & Professional Links -->
+            <div class="contact-info-section">
+                <h2>Professional Profiles</h2>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:tom.nylund@professional.com">tomnylund24@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/tom-nylund-250804251/" target="_blank">View Professional Profile</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/nylzy" target="_blank">View Code Portfolio</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <i class="fas fa-file-pdf"></i>
+                        <div>
+                            <h3>Resume/CV</h3>
+                            <a href="/resume.pdf" target="_blank">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="availability-card">
+                    <div class="availability-status">
+                        <span class="status-indicator available"></span>
+                        <strong>Open to Opportunities</strong>
+                    </div>
+                    <p>Currently seeking internship positions across software engineering & data science roles.</p>
+                </div>
+
+                <div class="response-time">
+                    <p><i class="fas fa-clock"></i> <strong>Response Time:</strong> Within 24 hours for professional inquiries</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="footer">
@@ -31,5 +128,6 @@
         <a href="contact.html" class="active">Contact</a>
     </nav>
 </footer>
+
 </body>
 </html>
