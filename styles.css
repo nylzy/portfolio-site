@@ -215,3 +215,151 @@ main.blog h1 {
 .post-preview a.read-more:hover {
     text-decoration: underline;
 }
+
+/* --- Individual Blog Post Styles --- */
+main.blog-post {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main.blog-post article {
+    background-color: #ffffff;
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.post-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    color: #111111;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #888888;
+}
+
+.featured-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.post-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.post-body p {
+    margin: 0 0 20px 0;
+}
+
+.post-body h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 40px 0 20px 0;
+    color: #111111;
+}
+
+.post-body h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 30px 0 15px 0;
+    color: #111111;
+}
+
+.post-body ul, .post-body ol {
+    margin: 0 0 20px 0;
+    padding-left: 30px;
+}
+
+.post-body li {
+    margin-bottom: 10px;
+}
+
+.post-body blockquote {
+    border-left: 4px solid #2979FF;
+    padding: 15px 25px;
+    margin: 30px 0;
+    background-color: #f8f9fa;
+    font-style: italic;
+    color: #555555;
+}
+
+.post-body code {
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.post-body pre {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.post-body pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+.post-footer {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.back-to-blog {
+    color: #2a9d8f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.back-to-blog:hover {
+    color: #238276;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for blog posts */
+@media (max-width: 768px) {
+    main.blog-post article {
+        padding: 30px 25px;
+    }
+
+    .post-header h1 {
+        font-size: 2rem;
+    }
+
+    .post-body {
+        font-size: 1rem;
+    }
+
+    .post-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .post-body h3 {
+        font-size: 1.2rem;
+    }
+}
