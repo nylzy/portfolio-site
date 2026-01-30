@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tom Nylund - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="logo">Tom <span>Nylund</span></h1>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="projects-page">
+    <div class="projects-container">
+        <div class="projects-intro">
+            <h1>Featured Projects</h1>
+            <p>A selection of my recent work showcasing expertise in software development, problem-solving, and innovative solutions.</p>
+        </div>
+
+        <!-- Filter/Category Tabs (Optional) -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+            <button class="filter-btn" data-filter="data">Data Science</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card" data-category="web">
+                <div class="project-image">
+                    <img src="images/Cricanalysis1-1024x585.webp" alt="E-commerce Platform">
+                    <div class="project-overlay">
+                        <a href="project-details.html" class="view-project-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>Sports Machine Learning Dashboard</h2>
+                        <div class="project-status">
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                    </div>
+                    <p class="project-description">A machine learning model that predicts runs scored by cricket players based on historical performance, match conditions, and opponent strength. Built with Python, scikit-learn, and XGBoost to analyze player form and provide data-driven insights for team selection and strategy.</p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/tomnylund/project1" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://project1-demo.com" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" data-category="mobile">
+                <div class="project-image">
+                    <img src="images/hybridtathletetraining.webp" alt="Weather Forecast App">
+                    <div class="project-overlay">
+                        <a href="project-details.html" class="view-project-btn">View Details</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h2>Cloud-Based Fitness Performance Tracking System</h2>
+                        <div class="project-status">
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                    </div>
+                    <p class="project-description">A full-stack web application for tracking fitness performance across multiple events. Node.js/Express backend handles user authentication, calculates fitness scores, and manages social features (friends, groups, leaderboards). React frontend provides real-time data visualization and interactive dashboards. PostgreSQL stores user data, event results, and relationships. Dockerized for scalable deployment.</p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/tomnylund/project6" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://project1-demo.com" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>
