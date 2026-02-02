@@ -3,5 +3,23 @@
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "nodemailer": "^7.0.13"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "portfolio-site",
+  "description": "The base for my personal portfolio website.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nylzy/portfolio-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nylzy/portfolio-site/issues"
+  },
+  "homepage": "https://github.com/nylzy/portfolio-site#readme"
 }
