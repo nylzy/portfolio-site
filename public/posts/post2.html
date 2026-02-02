@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slow Down to Speed Up - Tom Nylund</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="logo">Tom <span>Nylund</span></h1>
+    <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="blog-post">
+    <article>
+        <header class="post-header">
+            <h1>Slow Down to Speed Up</h1>
+            <div class="post-meta">
+                <span class="post-date">February 2, 2026</span>
+                <span class="post-author">By Tom Nylund</span>
+            </div>
+        </header>
+
+        <img src="../images/Protect-Apartment-Breakins.jpg" alt="Security concept" class="featured-image">
+
+        <div class="post-body">
+            <p>I made a rookie mistake this week. While building the contact form for this portfolio, I accidentally pushed my <code>.env</code> file to GitHub with my Gmail app password exposed. It was a small oversight that taught me a valuable lesson about the cost of rushing.</p>
+
+            <h2>The Mistake</h2>
+            <p>I was excited. My Node.js backend was working locally, and I wanted to push my progress immediately. In my enthusiasm, I skipped checking what I was actually committing. The <code>.env</code> file with my email credentials was suddenly public in my repository history.</p>
+
+            <p>What followed was an hour of scrambling: revoking the password, removing the file from Git history, and generating new credentials. The irony? Rushing to save time cost me far more time fixing the mistake.</p>
+
+            <h2>Why I Rushed</h2>
+            <p>Looking back, I can see why:</p>
+            
+            <ul>
+                <li><strong>Excitement blindness:</strong> When something finally works, there's an urge to lock in progress before it breaks.</li>
+                <li><strong>False urgency:</strong> I felt pressure to show progress, even on a personal project with no deadline.</li>
+                <li><strong>Overconfidence:</strong> I had <code>.gitignore</code> set up, so I assumed I was protected without verifying.</li>
+            </ul>
+
+            <h2>The Real Cost</h2>
+            <p>Beyond the security issue, rushing meant I also deployed code with syntax errors, wrong API endpoints, and missing environment variables. Each issue required more debugging. I was in reactive mode instead of thoughtful mode.</p>
+
+            <p>Thirty seconds of verification would have prevented an hour of cleanup. That's the paradox: the time you save upfront gets multiplied fixing preventable mistakes.</p>
+
+            <h2>What I Learned</h2>
+            
+            <p><strong>Slow is smooth, smooth is fast.</strong> Taking time to do things right is ultimately faster than rushing and fixing mistakes.</p>
+
+            <p><strong>Excitement is not urgency.</strong> Just because something works doesn't mean it needs to be deployed immediately. Most of the time, waiting an extra hour to review won't matter.</p>
+
+            <p><strong>Trust but verify.</strong> Assumptions are dangerous. I now verify that security measures are actually working, not just that they exist.</p>
+
+            <h2>My Pre-Deployment Checklist</h2>
+            <ul>
+                <li>Run <code>git status</code> and review every file</li>
+                <li>Check for sensitive data or credentials</li>
+                <li>Verify environment variables are set</li>
+                <li>Test locally one more time</li>
+                <li>Review the diff before committing</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Rushing feels productive in the moment, but it's just borrowing time from your future self. I'm grateful this happened on a personal project where the stakes were low. The lesson was clear: real productivity isn't about how fast you move. It's about moving consistently in the right direction.</p>
+
+            <p>Next time I'm eager to push, I'll remember that verification isn't slowing me down. It's preventing me from having to write another blog post about a preventable mistake.</p>
+        </div>
+
+        <footer class="post-footer">
+            <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+        </footer>
+    </article>
+</main>
+
+<footer class="footer">
+    <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>
