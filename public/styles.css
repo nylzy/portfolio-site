@@ -21,7 +21,7 @@ main {
 .site-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;3222
+    align-items: center;
     padding: 10px 40px;
     background-color: #F5F5F5;
 }
