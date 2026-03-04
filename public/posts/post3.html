@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Post - Tom Nylund</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="logo">Tom <span>Nylund</span></h1>
+    <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="blog-post">
+    <article>
+        <header class="post-header">
+            <h1>Developing uni-grind.com</h1>
+            <div class="post-meta">
+                <span class="post-date">March 4, 2026</span>
+                <span class="post-author">By Tom Nylund</span>
+            </div>
+        </header>
+
+        <img src="../images/Screenshot from 2026-03-04 16-26-11.png" alt="Post featured image" class="featured-image">
+
+        <div class="post-body">
+            <p>Over the past few weeks I have been building Uni-Grind, a study tracker designed for university students. What started as a personal frustration — not knowing how many hours I was actually studying or where that time was going — turned into a full-stack web application that is now live and being used by students at my university. This post is about what I built, the technical decisions I made along the way, and what I learned from shipping something real.</p>
+
+            <h2>The Problem I Was Solving</h2>
+            <p>Most study tools are either too simple or too complex. A plain timer tells you nothing. Apps like Notion or Todoist are powerful but not built around the core question: how much am I actually studying, and is it enough?</p>
+
+            <p>I wanted something that tracked Pomodoro sessions, broke down time by university unit, showed a daily streak, and put your hours on a leaderboard next to other students. Not to be competitive, but to stay accountable. The kind of visibility that makes you sit down and open your notes instead of convincing yourself you have done enough for the day.</p>
+
+            <h2>What I Built It With</h2>
+            <p>The stack I chose was deliberately practical and deployable:</p>
+            
+            <ul>
+                <li><strong>Next.js 15 (App Router) + React:</strong> For the frontend and routing, with server-side rendering where needed.</li>
+                <li><strong>Supabase:</strong> For authentication, a Postgres database, row-level security, and real-time presence.</li>
+                <li><strong>Recharts:</strong> For the weekly unit breakdown bar chart.</li>
+                <li><strong>Vercel:</strong> For deployment and edge functions.</li>
+                <li><strong>Resend:</strong> For transactional email on signup confirmation.</li>
+            </ul>
+
+            <h2>Lessons Learned</h2>
+            <p>Building something used by real people surfaces problems that tutorials never mention. This project taught me:</p>
+            <ol>
+                <li>Browser timers drift. A naive setInterval approach caused the countdown to run seconds ahead over a few minutes. I fixed this by syncing against the wall clock on every tick and correcting on visibility change, so the timer stays accurate even after the tab is backgrounded or the laptop sleeps.</li>
+                <li>Security has to be intentional. A friend stress-tested the app and found that without proper row-level security policies in Postgres, any authenticated user could query any other user's data. Fixing this meant thinking carefully about what each table should expose and to whom, including building a public_profiles view that deliberately omits sensitive columns.</li>
+                <li>Ship early and fix what real users break. The most useful bugs I found came from people actually using the app, not from my own testing.</li>
+            </ol>
+
+            <h2>Conclusion</h2>
+            <p>Uni-Grind is live at uni-grind.com. It is the most complete project I have shipped and the one I have learned the most from. Building it gave me confidence that I can take a problem, design a solution, and deliver something that works in production — which is ultimately what the industry is looking for. Every bug I fixed and every edge case I handled is a skill I did not have before I started.</p>
+        </div>
+
+        <footer class="post-footer">
+            <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+        </footer>
+    </article>
+</main>
+
+<footer class="footer">
+    <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../contact.html">Contact</a>
+    </nav>
+</footer>
+
+</body>
+</html>
