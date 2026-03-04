@@ -94,11 +94,10 @@
         }
         .btn-ghost:hover { border-color: #2979FF; color: #2979FF; }
 
-        /* Stats row */
         .project-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
             margin-bottom: 48px;
         }
 
@@ -106,13 +105,13 @@
             background: #ffffff;
             border: 1px solid #e0e0e0;
             border-radius: 12px;
-            padding: 24px;
+            padding: 20px 16px;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
 
         .project-stat .stat-number {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
             color: #2979FF;
             display: block;
@@ -120,13 +119,12 @@
         }
 
         .project-stat .stat-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #888888;
             text-transform: uppercase;
             letter-spacing: 0.06em;
         }
 
-        /* Section */
         .detail-section {
             margin-bottom: 48px;
         }
@@ -140,7 +138,19 @@
             border-bottom: 2px solid #f0f0f0;
         }
 
-        /* Tech stack — reuse tech-tag from projects page */
+        /* Architecture summary */
+        .architecture-box {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 24px 28px;
+            font-size: 0.95rem;
+            color: #444444;
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        /* Tech stack */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -174,7 +184,7 @@
             color: #888;
         }
 
-        /* Features — reuse skill-card */
+        /* What I built grid */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -211,6 +221,15 @@
             margin: 0;
         }
 
+        .challenge-item code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #2979FF;
+        }
+
         .more-projects {
             text-align: center;
             padding: 40px 0 0;
@@ -225,7 +244,7 @@
 
         @media (max-width: 640px) {
             .project-detail-header h1 { font-size: 1.8rem; }
-            .project-stats { grid-template-columns: 1fr; }
+            .project-stats { grid-template-columns: 1fr 1fr; }
             .features-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -246,7 +265,6 @@
 <main class="project-detail">
     <div class="project-detail-container">
 
-        <!-- Back link -->
         <div class="project-back">
             <a href="../projects.html"><i class="fas fa-arrow-left"></i> All Projects</a>
         </div>
@@ -255,7 +273,7 @@
         <div class="project-detail-header">
             <span class="status-badge completed">Live in Production</span>
             <h1>Uni-Grind: Study Tracker for University Students</h1>
-            <p class="tagline">A full-stack study tracker with a Pomodoro timer, live leaderboard, and weekly unit breakdown chart. Built and shipped solo — gained over 1,500 visits and 500 unique visitors organically since launch.</p>
+            <p class="tagline">A full-stack study tracker with a Pomodoro timer, live leaderboard, and weekly unit breakdown chart. Built and shipped solo, gaining over 1,500 visits and 500 unique visitors organically since launch.</p>
             <div class="project-detail-links">
                 <a href="https://uni-grind.com" target="_blank" class="btn-live">
                     <i class="fas fa-external-link-alt"></i> Visit uni-grind.com
@@ -277,11 +295,16 @@
                 <span class="stat-label">Unique Visitors</span>
             </div>
             <div class="project-stat">
-                <span class="stat-number">Solo</span>
-                <span class="stat-label">Developer</span>
+                <span class="stat-number">4</span>
+                <span class="stat-label">DB Tables</span>
+            </div>
+            <div class="project-stat">
+                <span class="stat-number">Edge</span>
+                <span class="stat-label">Deployed</span>
             </div>
         </div>
 
+        <!-- Screenshots -->
         <div class="detail-section">
             <h2>Screenshots</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
@@ -296,9 +319,12 @@
             </div>
         </div>
 
-        <!-- Tech Stack -->
+        <!-- Architecture -->
         <div class="detail-section">
-            <h2>Tech Stack</h2>
+            <h2>Architecture</h2>
+            <div class="architecture-box">
+                The frontend is a Next.js 15 app deployed on Vercel's edge network, communicating directly with Supabase for all data operations. User authentication is handled via Supabase Auth with JWT sessions. Study sessions, tasks, profiles, and leaderboard data are stored in a Postgres database with row-level security enforced at the database layer. Real-time features like the online presence counter use Supabase Realtime presence channels, with no custom WebSocket server required. The leaderboard aggregates session totals client-side, batch-resolving display names in a single follow-up query to avoid N+1 requests.
+            </div>
             <div class="tech-stack">
                 <div class="tech-stack-badge">
                     <i class="fab fa-react"></i>
@@ -306,7 +332,7 @@
                 </div>
                 <div class="tech-stack-badge">
                     <i class="fas fa-database"></i>
-                    <div><span>Supabase</span><small>Auth, database & realtime</small></div>
+                    <div><span>Supabase</span><small>Auth, Postgres & Realtime</small></div>
                 </div>
                 <div class="tech-stack-badge">
                     <i class="fas fa-chart-bar"></i>
@@ -314,44 +340,44 @@
                 </div>
                 <div class="tech-stack-badge">
                     <i class="fas fa-cloud"></i>
-                    <div><span>Vercel</span><small>Deployment & edge functions</small></div>
+                    <div><span>Vercel</span><small>Edge deployment</small></div>
                 </div>
             </div>
         </div>
 
-        <!-- Features -->
+        <!-- What I Built -->
         <div class="detail-section">
-            <h2>Features</h2>
+            <h2>What I Built</h2>
             <div class="features-grid">
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-clock"></i>
                     <h3>Pomodoro Timer</h3>
-                    <p>Customisable focus and break intervals. Stays accurate across background tabs and device sleep using wall-clock syncing.</p>
+                    <p>Wall-clock based timer that records a start timestamp and calculates remaining time on every tick rather than decrementing a counter, keeping it accurate across background tabs, page switches, and device sleep.</p>
                 </div>
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-trophy"></i>
                     <h3>Live Leaderboard</h3>
-                    <p>Weekly and all-time rankings filtered by university. Users can opt out with a built-in incognito mode.</p>
+                    <p>Aggregates study session totals across all users, filters by university, and resolves display names in a single batched query. Supports weekly and all-time views with an opt-out incognito mode stored in the user's profile.</p>
                 </div>
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-chart-bar"></i>
-                    <h3>Unit Breakdown</h3>
-                    <p>A weekly bar chart showing time spent per university unit — makes it easy to spot neglected subjects before it's too late.</p>
+                    <h3>Unit Breakdown Chart</h3>
+                    <p>Queries the last 7 days of sessions, groups minutes by unit tag, and renders a bar chart with Recharts. Gives students visibility into where their time actually goes each week.</p>
                 </div>
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-fire"></i>
                     <h3>Daily Streak</h3>
-                    <p>Tracks consecutive study days to build consistent habits and motivate daily engagement.</p>
+                    <p>Calculates streaks by deduplicating session dates and comparing each against an expected consecutive day, correctly handling gaps and timezone offsets without any server-side cron job.</p>
                 </div>
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-users"></i>
-                    <h3>Live Presence</h3>
-                    <p>Real-time count of users currently studying, powered by Supabase Realtime presence channels.</p>
+                    <h3>Real-time Presence</h3>
+                    <p>Shows a live count of users currently on the dashboard using Supabase Realtime presence channels. User IDs are deliberately excluded from the tracked payload to prevent exposure via browser dev tools.</p>
                 </div>
                 <div class="skill-card" style="text-align:left;">
                     <i class="fas fa-tasks"></i>
                     <h3>Task Manager</h3>
-                    <p>Create tasks tagged to units with optional due dates. Tasks sort automatically by due date and are linked to study sessions.</p>
+                    <p>Tasks are tagged to units and linked to study sessions on completion. Due dates are stored as Postgres date types and sorted client-side with null values pushed to the bottom to prioritise urgent work.</p>
                 </div>
             </div>
         </div>
@@ -361,16 +387,16 @@
             <h2>Technical Challenges</h2>
             <div class="challenge-list">
                 <div class="challenge-item">
-                    <h3>Timer Drift & Background Tab Accuracy</h3>
-                    <p>Browsers throttle <code>setInterval</code> in background tabs, causing the countdown to drift. Solved by recording a wall-clock start time and recalculating elapsed time on every tick, then re-syncing on visibility change so the timer stays accurate even after the laptop sleeps.</p>
+                    <h3>Timer Drift Across Background Tabs and Device Sleep</h3>
+                    <p>A naive <code>setInterval</code> approach caused the countdown to run seconds behind after backgrounding the tab, as browsers throttle intervals to save power. Fixed by storing a wall-clock start timestamp in <code>localStorage</code> and computing remaining time as <code>startValue - elapsed</code> on every tick. A <code>visibilitychange</code> event listener catches any remaining drift when the tab is re-focused, correcting the timer instantly.</p>
                 </div>
                 <div class="challenge-item">
-                    <h3>Row-Level Security & Data Privacy</h3>
-                    <p>A security review found that without Postgres RLS policies, authenticated users could query any other user's data. Implemented per-table RLS policies and a <code>public_profiles</code> view that deliberately omits sensitive columns, ensuring users can only access what they're permitted to see.</p>
+                    <h3>Row-Level Security and Data Exposure</h3>
+                    <p>During a security review a friend discovered that without Postgres RLS policies, any authenticated user could query any other user's profile data including sensitive fields like enrolled units. Resolved by enabling RLS on all tables, writing per-operation policies scoped to <code>auth.uid()</code>, and creating a <code>public_profiles</code> view that exposes only the columns safe for public display. The leaderboard queries this view rather than the profiles table directly.</p>
                 </div>
                 <div class="challenge-item">
-                    <h3>Leaderboard Performance</h3>
-                    <p>The leaderboard aggregates session data across all users. Structured queries to fetch totals first then batch-resolve display names in a single request, avoiding N+1 queries and keeping load times fast as the user base grows.</p>
+                    <h3>Session Backdating and Duration Manipulation</h3>
+                    <p>Without constraints, the insert endpoint accepted arbitrary <code>created_at</code> timestamps and inflated durations, making it trivial to game the leaderboard. Added a Postgres <code>CHECK</code> constraint capping session duration at 180 minutes and a second constraint rejecting timestamps older than one hour, with a <code>NOT VALID</code> flag to avoid re-checking existing rows on migration.</p>
                 </div>
             </div>
         </div>
